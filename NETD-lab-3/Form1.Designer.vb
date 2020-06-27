@@ -24,7 +24,7 @@ Partial Class frmAverageUnits
     Private Sub InitializeComponent()
         Me.lblDays = New System.Windows.Forms.Label()
         Me.lblUnits = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtUnits = New System.Windows.Forms.TextBox()
         Me.lblEmployee1 = New System.Windows.Forms.Label()
         Me.lblEmployee2 = New System.Windows.Forms.Label()
         Me.lblEmployee3 = New System.Windows.Forms.Label()
@@ -58,14 +58,13 @@ Partial Class frmAverageUnits
         Me.lblUnits.TabIndex = 1
         Me.lblUnits.Text = "Units:"
         '
-        'TextBox1
+        'txtUnits
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.TextBox1.Location = New System.Drawing.Point(76, 45)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.txtUnits.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtUnits.Location = New System.Drawing.Point(76, 45)
+        Me.txtUnits.Name = "txtUnits"
+        Me.txtUnits.Size = New System.Drawing.Size(100, 22)
+        Me.txtUnits.TabIndex = 2
         '
         'lblEmployee1
         '
@@ -99,6 +98,7 @@ Partial Class frmAverageUnits
         Me.txtEmp1.Location = New System.Drawing.Point(21, 112)
         Me.txtEmp1.Multiline = True
         Me.txtEmp1.Name = "txtEmp1"
+        Me.txtEmp1.ReadOnly = True
         Me.txtEmp1.Size = New System.Drawing.Size(100, 170)
         Me.txtEmp1.TabIndex = 6
         '
@@ -107,6 +107,7 @@ Partial Class frmAverageUnits
         Me.txtEmp2.Location = New System.Drawing.Point(127, 112)
         Me.txtEmp2.Multiline = True
         Me.txtEmp2.Name = "txtEmp2"
+        Me.txtEmp2.ReadOnly = True
         Me.txtEmp2.Size = New System.Drawing.Size(100, 171)
         Me.txtEmp2.TabIndex = 7
         '
@@ -115,6 +116,7 @@ Partial Class frmAverageUnits
         Me.txtEmp3.Location = New System.Drawing.Point(233, 113)
         Me.txtEmp3.Multiline = True
         Me.txtEmp3.Name = "txtEmp3"
+        Me.txtEmp3.ReadOnly = True
         Me.txtEmp3.Size = New System.Drawing.Size(100, 170)
         Me.txtEmp3.TabIndex = 8
         '
@@ -204,7 +206,7 @@ Partial Class frmAverageUnits
         Me.Controls.Add(Me.lblEmployee3)
         Me.Controls.Add(Me.lblEmployee2)
         Me.Controls.Add(Me.lblEmployee1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtUnits)
         Me.Controls.Add(Me.lblUnits)
         Me.Controls.Add(Me.lblDays)
         Me.MaximizeBox = False
@@ -219,7 +221,7 @@ Partial Class frmAverageUnits
 
     Friend WithEvents lblDays As Label
     Friend WithEvents lblUnits As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtUnits As TextBox
     Friend WithEvents lblEmployee1 As Label
     Friend WithEvents lblEmployee2 As Label
     Friend WithEvents lblEmployee3 As Label
