@@ -1,4 +1,4 @@
 ﻿Option Strict On
-Public Class Form1
+Public Class frmAverageUnits
 
 End Class
