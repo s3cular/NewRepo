@@ -164,6 +164,7 @@ Partial Class frmAverageUnits
         'btnReset
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnReset.Location = New System.Drawing.Point(127, 345)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(100, 35)
@@ -183,10 +184,12 @@ Partial Class frmAverageUnits
         '
         'frmAverageUnits
         '
+        Me.AcceptButton = Me.btnEnter
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.CancelButton = Me.btnReset
         Me.ClientSize = New System.Drawing.Size(343, 391)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnReset)
