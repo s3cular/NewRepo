@@ -24,17 +24,28 @@ Public Class frmAverageUnits
     Dim average2 As Double = 0.0
     Dim average3 As Double = 0.0
 
-
+    ''' <summary>
+    ''' Event handler for exit button which handles click event on exit button
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
 
+    ''' <summary>
+    ''' Event handler for reset button which handles click event on reset button
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         currentDay = 1
         runningTotal = 0
         BoldFont(lblEmployee1, True)
         BoldFont(lblEmployee2, False)
         BoldFont(lblEmployee3, False)
+        txtUnits.Enabled = True
+        btnEnter.Enabled = True
         CReset(rowNum, colNum)
         Array.Clear(daysArray, MAX_EMP - 1, MAX_DAYS - 1)
         txtUnits.Text = ""
@@ -48,12 +59,11 @@ Public Class frmAverageUnits
         lblOutput2.Text = ""
         lblOutput3.Text = ""
         lblResult.Text = ""
-        txtUnits.Enabled = True
-        btnEnter.Enabled = True
+
     End Sub
 
     ''' <summary>
-    ''' 
+    ''' Event handler for enter button which handles click event on enter button
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
@@ -63,9 +73,7 @@ Public Class frmAverageUnits
 
         If IsNumeric(userInput) Then
             inputAsInt = CInt(userInput)
-
             If inputAsInt.ToString = userInput Then
-
                 If inputAsInt >= MIN_VALUE And inputAsInt <= MAX_VALUE Then
                     If (empNum = 2) Then
                         BoldFont(lblEmployee3, True)
@@ -125,8 +133,11 @@ Public Class frmAverageUnits
         txtUnits.Text = ""
     End Sub
 
+    ''' <summary>
+    ''' It will calculate average units of 7 days for Employee 1
+    ''' </summary>
+    ''' <param name="runningTotal"></param>
     Private Sub CalEmp1(ByRef runningTotal As Double)
-
         average1 = runningTotal / MAX_DAYS
         lblOutput1.Text = "Average: " & average1.ToString
         BoldFont(lblEmployee1, False)
@@ -134,8 +145,11 @@ Public Class frmAverageUnits
         runningTotal = 0.0
     End Sub
 
+    ''' <summary>
+    ''' It will calculate average units of 7 days for Employee 2
+    ''' </summary>
+    ''' <param name="runningTotal"></param>
     Private Sub CalEmp2(ByRef runningTotal As Double)
-
         average2 = runningTotal / MAX_DAYS
         lblOutput2.Text = "Average: " & average2.ToString
         BoldFont(lblEmployee2, False)
@@ -143,14 +157,21 @@ Public Class frmAverageUnits
         runningTotal = 0.0
     End Sub
 
+    ''' <summary>
+    ''' It will calculate average units of 7 days for Employee 3
+    ''' </summary>
+    ''' <param name="runningTotal"></param>
     Private Sub CalEmp3(ByRef runningTotal As Double)
-
         average3 = runningTotal / MAX_DAYS
         lblOutput3.Text = "Average: " & average3.ToString
         BoldFont(lblEmployee3, False)
         runningTotal = 0.0
     End Sub
 
+    ''' <summary>
+    ''' It will calculate average units of 3 employee of a week
+    ''' </summary>
+    ''' <param name="daysArray"></param>
     Private Sub CalAll(daysArray(,) As Integer)
         Dim allAvg As Double = 0.0
 
@@ -164,18 +185,23 @@ Public Class frmAverageUnits
     End Sub
 
     ''' <summary>
-    ''' 
+    ''' This will change the font style between regular and bold.
     ''' </summary>
-    ''' <param name="lbControl"></param>
+    ''' <param name="lbCtrl"></param>
     ''' <param name="bold"></param>
-    Private Sub BoldFont(lbControl As Label, bold As Boolean)
+    Private Sub BoldFont(lbCtrl As Label, bold As Boolean)
         If bold = True Then
-            lbControl.Font = New Font(lbControl.Font, FontStyle.Bold)
+            lbCtrl.Font = New Font(lbCtrl.Font, FontStyle.Bold)
         Else
-            lbControl.Font = New Font(lbControl.Font, FontStyle.Regular)
+            lbCtrl.Font = New Font(lbCtrl.Font, FontStyle.Regular)
         End If
     End Sub
 
+    ''' <summary>
+    ''' This will reset array and row count to 0
+    ''' </summary>
+    ''' <param name="rowNum"></param>
+    ''' <param name="colNum"></param>
     Private Sub CReset(ByRef rowNum As Integer, ByRef colNum As Integer)
         colNum = 0
         empNum = 0
