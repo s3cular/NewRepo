@@ -3,8 +3,9 @@
 '   Author: Smit Mangroliya
 '   File: Average Units Shipped By Employee
 '   Date: 27 June, 2020
-'   Description: This form will calculate 
-'
+'   Description: This form will calculate average units shipped by 3 employee of
+'                a company and give average units shipped per day by company.
+
 Public Class frmAverageUnits
     'Constants
     Private Const MIN_VALUE As Integer = 0
