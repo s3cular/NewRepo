@@ -139,7 +139,7 @@ Public Class frmAverageUnits
     ''' <param name="runningTotal"></param>
     Private Sub CalEmp1(ByRef runningTotal As Double)
         average1 = runningTotal / MAX_DAYS
-        lblOutput1.Text = "Average: " & average1.ToString
+        lblOutput1.Text = "Average: " & Math.Round(average1, 2).ToString
         BoldFont(lblEmployee1, False)
         BoldFont(lblEmployee2, True)
         runningTotal = 0.0
@@ -151,7 +151,7 @@ Public Class frmAverageUnits
     ''' <param name="runningTotal"></param>
     Private Sub CalEmp2(ByRef runningTotal As Double)
         average2 = runningTotal / MAX_DAYS
-        lblOutput2.Text = "Average: " & average2.ToString
+        lblOutput2.Text = "Average: " & Math.Round(average2, 2).ToString
         BoldFont(lblEmployee2, False)
         BoldFont(lblEmployee3, True)
         runningTotal = 0.0
@@ -163,7 +163,7 @@ Public Class frmAverageUnits
     ''' <param name="runningTotal"></param>
     Private Sub CalEmp3(ByRef runningTotal As Double)
         average3 = runningTotal / MAX_DAYS
-        lblOutput3.Text = "Average: " & average3.ToString
+        lblOutput3.Text = "Average: " & Math.Round(average3, 2).ToString
         BoldFont(lblEmployee3, False)
         runningTotal = 0.0
     End Sub
@@ -178,7 +178,7 @@ Public Class frmAverageUnits
         total = average1 + average2 + average3
 
         allAvg = total / MAX_EMP
-        lblResult.Text = "Average per day: " & allAvg.ToString
+        lblResult.Text = "Average per day: " & Math.Round(allAvg, 2).ToString
         txtUnits.Enabled = False
         btnEnter.Enabled = False
         lblDays.Text = "Done"
