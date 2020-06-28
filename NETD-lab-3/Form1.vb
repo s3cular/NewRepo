@@ -34,11 +34,9 @@ Public Class frmAverageUnits
     End Sub
 
     ''' <summary>
-    ''' Event handler for reset button which handles click event on reset button
+    ''' This sub procedure will reset form to its initial state.
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+    Sub resetFrm()
         currentDay = 1
         runningTotal = 0
         BoldFont(lblEmployee1, True)
@@ -59,6 +57,15 @@ Public Class frmAverageUnits
         lblOutput2.Text = ""
         lblOutput3.Text = ""
         lblResult.Text = ""
+    End Sub
+
+    ''' <summary>
+    ''' Event handler for reset button. This will reset form by calling sub procedure.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        resetFrm()
 
     End Sub
 
@@ -134,6 +141,16 @@ Public Class frmAverageUnits
     End Sub
 
     ''' <summary>
+    ''' This will reset array and row count to 0
+    ''' </summary>
+    ''' <param name="rowNum"></param>
+    ''' <param name="colNum"></param>
+    Private Sub CReset(ByRef rowNum As Integer, ByRef colNum As Integer)
+        empNum = 0
+        colNum = 0
+    End Sub
+
+    ''' <summary>
     ''' It will calculate average units of 7 days for Employee 1
     ''' </summary>
     ''' <param name="runningTotal"></param>
@@ -197,13 +214,4 @@ Public Class frmAverageUnits
         End If
     End Sub
 
-    ''' <summary>
-    ''' This will reset array and row count to 0
-    ''' </summary>
-    ''' <param name="rowNum"></param>
-    ''' <param name="colNum"></param>
-    Private Sub CReset(ByRef rowNum As Integer, ByRef colNum As Integer)
-        colNum = 0
-        empNum = 0
-    End Sub
 End Class

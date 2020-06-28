@@ -194,7 +194,7 @@ Partial Class frmAverageUnits
         'lblEmployee3
         '
         Me.lblEmployee3.AutoSize = True
-        Me.lblEmployee3.Location = New System.Drawing.Point(242, 81)
+        Me.lblEmployee3.Location = New System.Drawing.Point(315, 81)
         Me.lblEmployee3.Name = "lblEmployee3"
         Me.lblEmployee3.Size = New System.Drawing.Size(82, 17)
         Me.lblEmployee3.TabIndex = 5
@@ -203,7 +203,7 @@ Partial Class frmAverageUnits
         'lblEmployee2
         '
         Me.lblEmployee2.AutoSize = True
-        Me.lblEmployee2.Location = New System.Drawing.Point(136, 81)
+        Me.lblEmployee2.Location = New System.Drawing.Point(179, 81)
         Me.lblEmployee2.Name = "lblEmployee2"
         Me.lblEmployee2.Size = New System.Drawing.Size(82, 17)
         Me.lblEmployee2.TabIndex = 4
@@ -212,7 +212,7 @@ Partial Class frmAverageUnits
         'lblEmployee1
         '
         Me.lblEmployee1.AutoSize = True
-        Me.lblEmployee1.Location = New System.Drawing.Point(30, 81)
+        Me.lblEmployee1.Location = New System.Drawing.Point(41, 81)
         Me.lblEmployee1.Name = "lblEmployee1"
         Me.lblEmployee1.Size = New System.Drawing.Size(82, 17)
         Me.lblEmployee1.TabIndex = 3
