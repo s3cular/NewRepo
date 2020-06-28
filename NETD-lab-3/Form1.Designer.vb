@@ -95,30 +95,33 @@ Partial Class frmAverageUnits
         '
         'txtEmp1
         '
-        Me.txtEmp1.Location = New System.Drawing.Point(21, 112)
+        Me.txtEmp1.Location = New System.Drawing.Point(21, 108)
         Me.txtEmp1.Multiline = True
         Me.txtEmp1.Name = "txtEmp1"
         Me.txtEmp1.ReadOnly = True
-        Me.txtEmp1.Size = New System.Drawing.Size(100, 170)
+        Me.txtEmp1.Size = New System.Drawing.Size(128, 172)
         Me.txtEmp1.TabIndex = 6
+        Me.txtEmp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEmp2
         '
-        Me.txtEmp2.Location = New System.Drawing.Point(127, 112)
+        Me.txtEmp2.Location = New System.Drawing.Point(155, 108)
         Me.txtEmp2.Multiline = True
         Me.txtEmp2.Name = "txtEmp2"
         Me.txtEmp2.ReadOnly = True
-        Me.txtEmp2.Size = New System.Drawing.Size(100, 171)
+        Me.txtEmp2.Size = New System.Drawing.Size(136, 172)
         Me.txtEmp2.TabIndex = 7
+        Me.txtEmp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEmp3
         '
-        Me.txtEmp3.Location = New System.Drawing.Point(233, 113)
+        Me.txtEmp3.Location = New System.Drawing.Point(297, 108)
         Me.txtEmp3.Multiline = True
         Me.txtEmp3.Name = "txtEmp3"
         Me.txtEmp3.ReadOnly = True
-        Me.txtEmp3.Size = New System.Drawing.Size(100, 170)
+        Me.txtEmp3.Size = New System.Drawing.Size(125, 171)
         Me.txtEmp3.TabIndex = 8
+        Me.txtEmp3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblOutput1
         '
@@ -126,31 +129,31 @@ Partial Class frmAverageUnits
         Me.lblOutput1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblOutput1.Location = New System.Drawing.Point(21, 290)
         Me.lblOutput1.Name = "lblOutput1"
-        Me.lblOutput1.Size = New System.Drawing.Size(100, 23)
+        Me.lblOutput1.Size = New System.Drawing.Size(128, 23)
         Me.lblOutput1.TabIndex = 9
         '
         'lblOutput2
         '
         Me.lblOutput2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblOutput2.Location = New System.Drawing.Point(127, 290)
+        Me.lblOutput2.Location = New System.Drawing.Point(155, 290)
         Me.lblOutput2.Name = "lblOutput2"
-        Me.lblOutput2.Size = New System.Drawing.Size(100, 23)
+        Me.lblOutput2.Size = New System.Drawing.Size(136, 23)
         Me.lblOutput2.TabIndex = 10
         '
         'lblOutput3
         '
         Me.lblOutput3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblOutput3.Location = New System.Drawing.Point(233, 290)
+        Me.lblOutput3.Location = New System.Drawing.Point(297, 290)
         Me.lblOutput3.Name = "lblOutput3"
-        Me.lblOutput3.Size = New System.Drawing.Size(100, 23)
+        Me.lblOutput3.Size = New System.Drawing.Size(125, 23)
         Me.lblOutput3.TabIndex = 11
         '
         'lblResult
         '
         Me.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblResult.Location = New System.Drawing.Point(21, 313)
+        Me.lblResult.Location = New System.Drawing.Point(20, 313)
         Me.lblResult.Name = "lblResult"
-        Me.lblResult.Size = New System.Drawing.Size(312, 29)
+        Me.lblResult.Size = New System.Drawing.Size(401, 29)
         Me.lblResult.TabIndex = 12
         '
         'btnEnter
@@ -158,7 +161,7 @@ Partial Class frmAverageUnits
         Me.btnEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnEnter.Location = New System.Drawing.Point(20, 345)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(101, 35)
+        Me.btnEnter.Size = New System.Drawing.Size(129, 35)
         Me.btnEnter.TabIndex = 13
         Me.btnEnter.Text = "&Enter"
         Me.btnEnter.UseVisualStyleBackColor = False
@@ -167,9 +170,9 @@ Partial Class frmAverageUnits
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnReset.Location = New System.Drawing.Point(127, 345)
+        Me.btnReset.Location = New System.Drawing.Point(155, 345)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(100, 35)
+        Me.btnReset.Size = New System.Drawing.Size(136, 35)
         Me.btnReset.TabIndex = 14
         Me.btnReset.Text = "&Reset"
         Me.btnReset.UseVisualStyleBackColor = False
@@ -177,9 +180,9 @@ Partial Class frmAverageUnits
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnExit.Location = New System.Drawing.Point(233, 345)
+        Me.btnExit.Location = New System.Drawing.Point(297, 345)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(100, 35)
+        Me.btnExit.Size = New System.Drawing.Size(125, 35)
         Me.btnExit.TabIndex = 15
         Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = False
@@ -192,7 +195,7 @@ Partial Class frmAverageUnits
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CancelButton = Me.btnReset
-        Me.ClientSize = New System.Drawing.Size(343, 391)
+        Me.ClientSize = New System.Drawing.Size(434, 391)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnEnter)
