@@ -1,4 +1,11 @@
-﻿Option Strict On
+﻿' Author: Smit Mangroliya
+' Date: 17 July 2020
+' Description: This is lab 4 NETD 2202. In this lab we are passing inputed data from combo box, textbox,
+'              and checkbox to listview.
+' Reference: The method of property is written from Austin's student list project.
+' Error: The listview is not working properly.
+
+Option Strict On
 
 Public Class frmCarInventory
 
@@ -11,24 +18,30 @@ Public Class frmCarInventory
 #End Region
 
 #Region "Event Handlers"
+
+    ''' <summary>
+    ''' This is event hadler for exit button, which handles click event on exit the button.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
 
+    ''' <summary>
+    ''' This is event hadler for reset button, which handles click event on exit the button.    
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        ResetForm()
+        SetDefault()
     End Sub
 
-    Private Sub ResetForm()
-        lvCarlist.SelectedItems.Clear()
-        txtModel.Text = String.Empty
-        lblOutput.Text = String.Empty
-        txtPrice.Text = String.Empty
-        cbMake.SelectedIndex = -1
-        cbYear.SelectedIndex = -1
-        ckNew.Checked = False
-    End Sub
-
+    ''' <summary>
+    ''' This is event handler for enter button, which handles click event on enter button. 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
 
         If ValidateInputs() = True Then
@@ -49,6 +62,11 @@ Public Class frmCarInventory
         End If
     End Sub
 
+    ''' <summary>
+    ''' Handles selection of car from list.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ListSelectedIndexChanged(sender As Object, e As EventArgs) Handles lvCarlist.SelectedIndexChanged
         If lvCarlist.SelectedIndices.Count = 1 Then
             car = cars(lvCarlist.SelectedIndices(0))
@@ -63,8 +81,13 @@ Public Class frmCarInventory
         isCarSelected = False
     End Sub
 
+    ''' <summary>
+    ''' it prevent the user from using checkbox in listview.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub lvCarlist_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles lvCarlist.ItemCheck
-        If Not updateData Then
+        If (Not updateData) Then
             e.NewValue = e.CurrentValue
         End If
     End Sub
@@ -72,6 +95,9 @@ Public Class frmCarInventory
 
 #Region "Sub and Function"
 
+    ''' <summary>
+    ''' This code will reset form to its original state.
+    ''' </summary>
     Private Sub SetDefault()
         cbMake.SelectedIndex = -1
         txtModel.Text = String.Empty
@@ -79,10 +105,15 @@ Public Class frmCarInventory
         txtPrice.Text = String.Empty
         ckNew.Checked = False
         lblOutput.Text = String.Empty
-        PL()
+        AddCarList()
         isCarSelected = False
         txtModel.Focus()
     End Sub
+
+    ''' <summary>
+    ''' This is code for validation
+    ''' </summary>
+    ''' <returns></returns>
     Private Function ValidateInputs() As Boolean
 
         Dim errorM As String = String.Empty
@@ -118,8 +149,12 @@ Public Class frmCarInventory
         Return returnV
     End Function
 
-    Sub PL()
+    ''' <summary>
+    ''' It reloads current list of cars into listview
+    ''' </summary>
+    Sub AddCarList()
         lvCarlist.Items.Clear()
+        updateData = True
         For index As Integer = 0 To cars.Count - 1
             Dim cI As New ListViewItem()
             cI.SubItems.Add(cars(index).IdentificationNumber.ToString)
@@ -128,7 +163,10 @@ Public Class frmCarInventory
             cI.SubItems.Add(cars(index).Year.ToString)
             cI.SubItems.Add(cars(index).Price.ToString)
             cI.Checked = cars(index).NewStatus
+
+            lvCarlist.Items.Add(cI)
         Next
+        updateData = False
     End Sub
 #End Region
 
